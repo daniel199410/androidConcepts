@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "938225875754",
+    "firebase_url": "https://android-concepts-41cf5.firebaseio.com",
+    "project_id": "android-concepts-41cf5",
+    "storage_bucket": "android-concepts-41cf5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938225875754:android:fd377ca26762ded5117c53",
+        "android_client_info": {
+          "package_name": "com.example.recyclerviewfirebasemvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938225875754-lpp1v8ajligbv3r22ag188kiggqkoquo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0EWkh7yUrcIz7WEO4qCODUkavZ3oD-HA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938225875754-lpp1v8ajligbv3r22ag188kiggqkoquo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
