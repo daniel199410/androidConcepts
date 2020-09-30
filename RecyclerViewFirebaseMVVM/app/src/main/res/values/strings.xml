@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RecyclerViewFirebaseMVVM</string>
+    <string name="t_title">Título</string>
+    <string name="description">Description</string>
 </resources>
