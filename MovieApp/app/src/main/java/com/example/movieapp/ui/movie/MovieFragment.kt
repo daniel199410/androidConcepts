@@ -1,8 +1,9 @@
-package com.example.movieapp
+package com.example.movieapp.ui.movie
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentMovieBinding
 
 /**

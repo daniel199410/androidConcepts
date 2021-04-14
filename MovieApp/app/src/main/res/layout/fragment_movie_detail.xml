@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MovieDetailFragment">
+    tools:context=".ui.movieDetails.MovieDetailFragment">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -42,9 +42,9 @@
             android:id="@+id/img_movie"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/movie_image"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher"
-            android:contentDescription="@string/movie_image" />
+            android:src="@mipmap/ic_launcher" />
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.Guideline
@@ -111,75 +111,40 @@
         tools:text="Language: en"
         android:layout_marginTop="8dp"/>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:text="@string/bookmark"
+        app:drawableTopCompat="@drawable/ic_baseline_bookmark_border_24"
         app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/bookmark"
-            android:src="@drawable/ic_baseline_bookmark_border_24" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/bookmark" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout">
+        android:text="@string/favorites"
+        app:drawableTopCompat="@drawable/ic_baseline_favorite_border_24"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/favorites"
-            android:src="@drawable/ic_baseline_favorite_border_24" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/favorites" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:text="@string/favorites"
+        app:drawableTopCompat="@drawable/ic_baseline_share_24"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/share"
-            android:src="@drawable/ic_baseline_share_24" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/share" />
-    </LinearLayout>
+        android:layout_marginRight="16dp" />
 
     <TextView
         android:id="@+id/textView2"
