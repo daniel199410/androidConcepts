@@ -15,4 +15,8 @@
     <string name="favorites">Favorites</string>
     <string name="share">Share</string>
     <string name="overview">Overview</string>
+    <string name="image_movie">Image movie</string>
+    <string name="upcoming_movies">Upcoming movies</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="top_rated_movies">Top Rated Movies</string>
 </resources>
