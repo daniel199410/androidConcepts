@@ -1,17 +1,15 @@
 package com.example.movieapp.data.remote
 
+import com.example.movieapp.application.AppConstants
 import com.example.movieapp.data.model.MovieList
+import com.example.movieapp.repository.WebService
 
-class MovieDataSource {
-    fun getUpcomingMovies(): MovieList {
-        return MovieList()
+class MovieDataSource(private val webService: WebService) {
+    suspend fun getUpcomingMovies(): MovieList {
+        return webService.getUpcomingMovies(AppConstants.API_KEY)
     }
 
-    fun getTopRatedMovies(): MovieList {
-        return MovieList()
-    }
+    suspend fun getTopRatedMovies(): MovieList = webService.getTopRatedMovies(AppConstants.API_KEY)
 
-    fun getTopPopularMovies(): MovieList {
-        return MovieList()
-    }
+    suspend fun getTopPopularMovies(): MovieList = webService.getPopularMovies(AppConstants.API_KEY)
 }
