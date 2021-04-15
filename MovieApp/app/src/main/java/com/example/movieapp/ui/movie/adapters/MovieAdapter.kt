@@ -39,6 +39,5 @@ class MovieAdapter(private val movieList: List<Movie>, private val itemClickList
         override fun bind(item: Movie) {
             Glide.with(context).load("${AppConstants.IMAGE_URL}${item.posterPath}").centerCrop().into(binding.imgMovie)
         }
-
     }
 }
