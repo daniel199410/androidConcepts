@@ -19,4 +19,7 @@
     <string name="upcoming_movies">Upcoming movies</string>
     <string name="popular_movies">Popular Movies</string>
     <string name="top_rated_movies">Top Rated Movies</string>
+    <string name="language_txt">Language %s</string>
+    <string name="rating_txt">%s (%d Reviews)</string>
+    <string name="release_txt">Released %s</string>
 </resources>

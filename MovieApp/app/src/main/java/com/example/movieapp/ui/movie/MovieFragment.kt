@@ -1,10 +1,10 @@
 package com.example.movieapp.ui.movie
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ConcatAdapter
 import com.example.movieapp.R
 import com.example.movieapp.core.Resource
@@ -51,6 +51,16 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnMovieCli
     }
 
     override fun onMovieClick(movie: Movie) {
-        Log.d("Movie", "onMovieClick: $movie")
+        val action = MovieFragmentDirections.actionFirstFragmentToSecondFragment(
+            movie.posterPath,
+            movie.backdropPath,
+            movie.voteAverage.toFloat(),
+            movie.voteCount,
+            movie.overview,
+            movie.title,
+            movie.originalLanguage,
+            movie.releaseDate
+        )
+        findNavController().navigate(action)
     }
 }
