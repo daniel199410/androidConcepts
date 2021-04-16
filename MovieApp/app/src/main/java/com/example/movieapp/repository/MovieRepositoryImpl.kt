@@ -1,12 +1,12 @@
 package com.example.movieapp.repository
 
 import com.example.movieapp.data.model.MovieList
-import com.example.movieapp.data.remote.MovieDataSource
+import com.example.movieapp.data.remote.RemoteMovieDataSource
 
-class MovieRepositoryImpl(private val dataSource: MovieDataSource): MovieRepository {
-    override suspend fun getUpcomingMovies(): MovieList = dataSource.getUpcomingMovies()
+class MovieRepositoryImpl(private val dataSourceRemote: RemoteMovieDataSource): MovieRepository {
+    override suspend fun getUpcomingMovies(): MovieList = dataSourceRemote.getUpcomingMovies()
 
-    override suspend fun getTopRatedMovies(): MovieList = dataSource.getTopRatedMovies()
+    override suspend fun getTopRatedMovies(): MovieList = dataSourceRemote.getTopRatedMovies()
 
-    override suspend fun getPopularMovies(): MovieList = dataSource.getTopPopularMovies()
+    override suspend fun getPopularMovies(): MovieList = dataSourceRemote.getTopPopularMovies()
 }
