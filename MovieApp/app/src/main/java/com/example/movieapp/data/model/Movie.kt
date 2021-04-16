@@ -1,8 +1,11 @@
 package com.example.movieapp.data.model
 
+import androidx.annotation.Nullable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
+import com.example.movieapp.application.MovieType
 import com.google.gson.annotations.SerializedName
 
 data class Movie(
@@ -26,7 +29,7 @@ data class Movie(
     val voteAverage: Double = -1.0,
     @SerializedName("vote_count")
     val voteCount: Long = -1,
-    val movieType: String = "",
+    val movieType: MovieType,
 )
 
 @Entity
@@ -58,7 +61,7 @@ data class MovieEntity(
     @ColumnInfo(name = "vote_count")
     val voteCount: Long = -1,
     @ColumnInfo(name = "movie_type")
-    val movieType: String = "",
+    val movieType: MovieType = MovieType.POPULAR,
 )
 
 fun List<MovieEntity>.toMovieList(): MovieList = MovieList(this.map { it.toMovie() })
@@ -78,6 +81,23 @@ fun MovieEntity.toMovie(): Movie = Movie(
     this.voteAverage,
     this.voteCount,
     this.movieType
+)
+
+fun Movie.toMovieEntity(movieType: MovieType): MovieEntity = MovieEntity(
+    this.id,
+    this.adult,
+    this.backdropPath,
+    this.originalTitle,
+    this.originalLanguage,
+    this.overview,
+    this.popularity,
+    this.posterPath,
+    this.releaseDate,
+    this.title,
+    this.video,
+    this.voteAverage,
+    this.voteCount,
+    movieType
 )
 
 data class MovieList(
