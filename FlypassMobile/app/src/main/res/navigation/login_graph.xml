@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/login_graph"
+    app:startDestination="@id/document">
+
+    <fragment
+        android:id="@+id/document"
+        android:name="co.com.flypass.flypassNative.ui.login.Document"
+        android:label="Document" >
+        <action
+            android:id="@+id/action_document_to_password"
+            app:destination="@id/password" />
+    </fragment>
+    <fragment
+        android:id="@+id/password"
+        android:name="co.com.flypass.flypassNative.ui.login.Password"
+        android:label="Password" >
+        <argument
+            android:name="document"
+            app:argType="string" />
+    </fragment>
+</navigation>
