@@ -11,4 +11,9 @@
     <string name="ivalid_user_or_password">Usuario o contraseña inválida.</string>
     <string name="access_token">access_token</string>
     <string name="secure_user_id">secure_user_id</string>
+    <string name="how_to_pay">Cómo pago</string>
+    <string name="vehicles">Vehículos</string>
+    <string name="movimientos">Movimientos</string>
+    <string name="mi_cuenta">Mi cuenta</string>
+    <string name="account_status">Estado cuenta</string>
 </resources>

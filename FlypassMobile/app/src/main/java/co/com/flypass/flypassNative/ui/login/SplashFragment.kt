@@ -15,12 +15,13 @@ class SplashFragment : Fragment(R.layout.fragment_splah) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSplahBinding.bind(view)
-        val action: NavDirections = if(loggedIn) {
-            SplashFragmentDirections.actionSplashFragmentToMainNav()
+        val action: NavDirections
+        if(loggedIn) {
+            action = SplashFragmentDirections.actionSplashFragmentToMainNav()
+            activity?.finish()
         } else {
-            SplashFragmentDirections.actionSplashFragmentToDocument()
+            action = SplashFragmentDirections.actionSplashFragmentToDocument()
         }
-        activity?.finish()
         findNavController().navigate(action)
     }
 

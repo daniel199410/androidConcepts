@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import co.com.flypass.flypassNative.R
 import co.com.flypass.flypassNative.core.AppConstants
@@ -40,8 +41,9 @@ class Password: Fragment(R.layout.password) {
                         if(it.data.accessToken.isNotBlank()) {
                             viewModel.saveSessionState(it.data, activity)
                             val sharedPref = activity?.getSharedPreferences(AppConstants.REFERENCE_FILE_KEY, Context.MODE_PRIVATE) ?: return@observe
-                            val highScore = sharedPref.getString(AppConstants.ACCESS_TOKEN, "defaultValue")
-                            Log.d("Preference", highScore!!)
+                            sharedPref.getString(AppConstants.ACCESS_TOKEN, "defaultValue")
+                            val action = PasswordDirections.actionPasswordToMainNav()
+                            findNavController().navigate(action)
                             requireActivity().finish()
                         }
                     }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_menu_payment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_remove_red_eye_24"
+        android:title="@string/how_to_pay"/>
+    <item
+        android:id="@+id/menu_item_vehicle"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_remove_red_eye_24"
+        android:title="@string/vehicles"/>
+    <item
+        android:id="@+id/item_menu_account_status"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_remove_red_eye_24"
+        android:title="@string/account_status"/>
+    <item
+        android:id="@+id/item_menu_movements"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_remove_red_eye_24"
+        android:title="@string/movimientos"/>
+    <item
+        android:id="@+id/item_menu_my_account"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_remove_red_eye_24"
+        android:title="@string/mi_cuenta"/>
+</menu>
