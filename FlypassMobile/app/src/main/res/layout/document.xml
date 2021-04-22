@@ -6,23 +6,21 @@
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp">
 
+    <RelativeLayout
+        android:id="@+id/progess_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <include
+            layout="@layout/progess_bar"/>
+    </RelativeLayout>
+
     <ImageView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_logo_flypass"
         android:layout_marginBottom="16dp"
         android:contentDescription="@string/logo" />
-
-    <RelativeLayout
-        android:id="@+id/progess_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone">
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
-    </RelativeLayout>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txt_document"
