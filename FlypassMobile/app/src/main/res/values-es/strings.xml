@@ -8,4 +8,7 @@
     <string name="login">Iniciar sesión</string>
     <string name="user_not_found">No se ha encontrado el usuario</string>
     <string name="please_wait">Por favor espera …</string>
+    <string name="ivalid_user_or_password">Usuario o contraseña inválida.</string>
+    <string name="access_token">access_token</string>
+    <string name="secure_user_id">secure_user_id</string>
 </resources>

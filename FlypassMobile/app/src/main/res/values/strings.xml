@@ -8,4 +8,7 @@
     <string name="login">Login</string>
     <string name="user_not_found">User not found</string>
     <string name="please_wait">Please wait …</string>
+    <string name="ivalid_user_or_password">Ivalid user or password.</string>
+    <string name="access_token">access_token</string>
+    <string name="secure_user_id">secure_user_id</string>
 </resources>

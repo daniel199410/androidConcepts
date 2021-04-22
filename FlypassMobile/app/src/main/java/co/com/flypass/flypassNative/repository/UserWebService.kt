@@ -8,17 +8,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface WebService {
+interface UserWebService {
     @GET("loginExists/{document}")
     suspend fun userExists(@Path("document") document: String): Model<Int>
 }
 
-object RetroFitClient {
-    val webService: WebService by lazy {
+object UserClient {
+    val USER_WEB_SERVICE: UserWebService by lazy {
         Retrofit.Builder()
-            .baseUrl(AppConstants.BASE_URL)
+            .baseUrl("${AppConstants.BASE_URL}${AppConstants.USER_SERVICE}")
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
-            .build().create(WebService::class.java)
+            .build().create(UserWebService::class.java)
     }
 }
 
