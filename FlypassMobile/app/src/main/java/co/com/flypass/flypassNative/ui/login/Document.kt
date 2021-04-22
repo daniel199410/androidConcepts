@@ -12,10 +12,12 @@ import co.com.flypass.flypassNative.databinding.DocumentBinding
 import co.com.flypass.flypassNative.presentation.LoginViewModel
 import co.com.flypass.flypassNative.presentation.LoginViewModelFactory
 import co.com.flypass.flypassNative.repository.UserRepository
+import com.google.android.material.snackbar.Snackbar
 
 class Document: Fragment(R.layout.document){
     private val viewModel by viewModels<LoginViewModel> { LoginViewModelFactory(UserRepository()) }
     private lateinit var binding: DocumentBinding
+    private lateinit var snackBar: Snackbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,7 @@ class Document: Fragment(R.layout.document){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        snackBar = Snackbar.make(view, R.string.user_not_found, Snackbar.LENGTH_LONG)
         binding = DocumentBinding.bind(view)
         binding.btnNext.setOnClickListener{
             if(!binding.txtDocument.text.isNullOrBlank()) {
@@ -42,6 +45,8 @@ class Document: Fragment(R.layout.document){
                         if(it.data.body == 1) {
                             val action = DocumentDirections.actionDocumentToPassword(document)
                             findNavController().navigate(action)
+                        } else {
+                            snackBar.show()
                         }
                     }
                     is Resource.Failure -> {

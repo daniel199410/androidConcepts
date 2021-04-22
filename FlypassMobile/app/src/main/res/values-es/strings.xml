@@ -6,4 +6,5 @@
     <string name="password">Contraseña</string>
     <string name="see_password">Ver contraseña</string>
     <string name="login">Iniciar sesión</string>
+    <string name="user_not_found">No se ha encontrado el usuario</string>
 </resources>
