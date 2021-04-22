@@ -3,4 +3,6 @@
     <string name="next">Continuar</string>
     <string name="document">Documento</string>
     <string name="logo">Logo</string>
+    <string name="password">Contraseña</string>
+    <string name="see_password">Ver contraseña</string>
 </resources>
