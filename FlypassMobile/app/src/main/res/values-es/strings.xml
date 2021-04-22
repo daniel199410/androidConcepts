@@ -5,4 +5,5 @@
     <string name="logo">Logo</string>
     <string name="password">Contraseña</string>
     <string name="see_password">Ver contraseña</string>
+    <string name="login">Iniciar sesión</string>
 </resources>

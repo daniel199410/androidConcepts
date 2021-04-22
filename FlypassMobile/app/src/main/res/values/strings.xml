@@ -5,4 +5,5 @@
     <string name="logo">Logo</string>
     <string name="password">Password</string>
     <string name="see_password">See password</string>
+    <string name="login">Login</string>
 </resources>
