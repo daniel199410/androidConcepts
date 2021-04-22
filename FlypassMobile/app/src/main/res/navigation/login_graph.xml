@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_graph"
-    app:startDestination="@id/document">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/document"
@@ -24,5 +24,27 @@
         <argument
             android:name="document"
             app:argType="string" />
+        <action
+            android:id="@+id/action_password_to_main_nav"
+            app:destination="@id/main_nav"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/main_nav"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <include app:graph="@navigation/main_nav" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="co.com.flypass.flypassNative.ui.login.SplashFragment"
+        android:label="fragment_splah"
+        tools:layout="@layout/fragment_splah" >
+        <action
+            android:id="@+id/action_splashFragment_to_document"
+            app:destination="@id/document" />
+        <action
+            android:id="@+id/action_splashFragment_to_main_nav"
+            app:destination="@id/main_nav"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/main_nav"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>

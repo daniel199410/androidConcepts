@@ -11,4 +11,6 @@
     <string name="ivalid_user_or_password">Ivalid user or password.</string>
     <string name="access_token">access_token</string>
     <string name="secure_user_id">secure_user_id</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

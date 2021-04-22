@@ -42,6 +42,7 @@ class Password: Fragment(R.layout.password) {
                             val sharedPref = activity?.getSharedPreferences(AppConstants.REFERENCE_FILE_KEY, Context.MODE_PRIVATE) ?: return@observe
                             val highScore = sharedPref.getString(AppConstants.ACCESS_TOKEN, "defaultValue")
                             Log.d("Preference", highScore!!)
+                            requireActivity().finish()
                         }
                     }
                     is Resource.Failure -> {
