@@ -16,4 +16,5 @@
     <string name="movimientos">Movimientos</string>
     <string name="mi_cuenta">Mi cuenta</string>
     <string name="account_status">Estado cuenta</string>
+    <string name="status">Estado</string>
 </resources>
