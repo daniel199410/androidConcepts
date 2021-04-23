@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import co.com.flypass.flypassNative.R
 import co.com.flypass.flypassNative.databinding.ActivityHomeBinding
 import co.com.flypass.flypassNative.ui.login.bottomNavigation.AccountStatusFragment
+import co.com.flypass.flypassNative.ui.login.bottomNavigation.VehicleFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -19,6 +20,10 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId) {
                 R.id.item_menu_account_status -> {
                     openFragment(AccountStatusFragment())
+                    true
+                }
+                R.id.menu_item_vehicle -> {
+                    openFragment(VehicleFragment())
                     true
                 }
                 else -> false

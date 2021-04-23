@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/vehicle_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_baseline_directions_car_24"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/vehicle_icon" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/vehicle_icon"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/vehicle_license_plate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_variant_light"
+                android:textStyle="bold"
+                tools:text="CBT480"
+                android:layout_marginEnd="8dp"/>
+            <TextView
+                android:id="@+id/vehicle_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_variant_light"
+                tools:text="(Caminón 2 ejes run mayor 17.5)" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/vehicle_specifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="CHEVROLET - SWIFT - CELESTE METALIZADO" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textStyle="bold"
+                android:text="@string/titular" />
+
+            <TextView
+                android:id="@+id/vehicle_titular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Daniel Cataño Restrepo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textStyle="bold"
+                android:text="@string/status" />
+
+            <TextView
+                android:id="@+id/vehicle_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Prematriculado" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

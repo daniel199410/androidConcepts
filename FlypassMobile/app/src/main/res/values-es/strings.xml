@@ -17,4 +17,5 @@
     <string name="mi_cuenta">Mi cuenta</string>
     <string name="account_status">Estado cuenta</string>
     <string name="status">Estado</string>
+    <string name="vehicle_icon">ícono del vehículo</string>
 </resources>
