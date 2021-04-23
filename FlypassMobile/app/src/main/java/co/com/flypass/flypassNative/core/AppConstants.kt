@@ -1,12 +1,13 @@
 package co.com.flypass.flypassNative.core
 
+import co.com.flypass.flypassNative.BuildConfig
+
 object AppConstants {
     const val REFERENCE_FILE_KEY = "co.com.flypass.flypassNative.PREFERENCE_FILE_KEY"
     const val SECURE_USER_ID = "secure_user_id"
     const val ACCESS_TOKEN = "access_token"
     const val SECURITY_SERVICE = "secure/"
-    //const val BASE_URL = "https://test.security.flypass.co/flypass/"
-    const val BASE_URL = "http://192.168.0.15:8070/flypass/"
+    const val BASE_URL = BuildConfig.BASE_URL
     const val USER_SERVICE = "user-service/"
     const val GRANT_TYPE = "password"
     const val CLIENT_ID = "flypass"
