@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import co.com.flypass.flypassNative.R
 import co.com.flypass.flypassNative.databinding.ActivityHomeBinding
 import co.com.flypass.flypassNative.ui.login.bottomNavigation.AccountStatusFragment
+import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -14,7 +15,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         binding = ActivityHomeBinding.inflate(layoutInflater)
-        binding.bottomNavigation.setOnNavigationItemSelectedListener {
+        bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId) {
                 R.id.item_menu_account_status -> {
                     openFragment(AccountStatusFragment())
@@ -23,12 +24,12 @@ class HomeActivity : AppCompatActivity() {
                 else -> false
             }
         }
-        binding.bottomNavigation.selectedItemId = R.id.item_menu_account_status
+        bottom_navigation.selectedItemId = R.id.item_menu_account_status
     }
 
     private fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(binding.container.id, fragment)
+        transaction.replace(R.id.container, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
