@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
 import co.com.flypass.flypassNative.core.AppConstants
 import co.com.flypass.flypassNative.core.Resource
+import co.com.flypass.flypassNative.core.SessionManager
 import co.com.flypass.flypassNative.data.model.TokenResponse
 import co.com.flypass.flypassNative.repository.SecurityRepository
 import co.com.flypass.flypassNative.repository.UserRepository

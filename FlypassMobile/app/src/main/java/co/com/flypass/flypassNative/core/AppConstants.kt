@@ -7,6 +7,7 @@ object AppConstants {
     const val SECURE_USER_ID = "secure_user_id"
     const val ACCESS_TOKEN = "access_token"
     const val SECURITY_SERVICE = "secure/"
+    const val VEHICLE_SERVICE = "vehicle/"
     const val BASE_URL = BuildConfig.BASE_URL
     const val USER_SERVICE = "user-service/"
     const val GRANT_TYPE = "password"

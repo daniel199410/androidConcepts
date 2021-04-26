@@ -1,16 +1,13 @@
 package co.com.flypass.flypassNative.ui.login
 
-import android.content.Context
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import co.com.flypass.flypassNative.R
-import co.com.flypass.flypassNative.core.AppConstants
 import co.com.flypass.flypassNative.core.Resource
 import co.com.flypass.flypassNative.databinding.PasswordBinding
 import co.com.flypass.flypassNative.presentation.LoginViewModel
@@ -40,8 +37,6 @@ class Password: Fragment(R.layout.password) {
                         binding.progessBar.visibility = View.GONE
                         if(it.data.accessToken.isNotBlank()) {
                             viewModel.saveSessionState(it.data, activity)
-                            val sharedPref = activity?.getSharedPreferences(AppConstants.REFERENCE_FILE_KEY, Context.MODE_PRIVATE) ?: return@observe
-                            sharedPref.getString(AppConstants.ACCESS_TOKEN, "defaultValue")
                             val action = PasswordDirections.actionPasswordToMainNav()
                             findNavController().navigate(action)
                             requireActivity().finish()
