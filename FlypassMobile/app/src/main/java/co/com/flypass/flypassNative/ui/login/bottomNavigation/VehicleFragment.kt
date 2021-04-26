@@ -30,7 +30,7 @@ class VehicleFragment : Fragment(R.layout.vehicle_fragment) {
     private val viewModel by viewModels<VehicleViewModel> { VehicleModelFactory(VehicleRepository(requireContext())) }
     private var vehicles: MutableList<Vehicle> = ArrayList()
     var page = 1
-    var limit = 10
+    var limit = 0
 
     lateinit var adapter: VehicleAdapter
     lateinit var layoutManager: LinearLayoutManager
@@ -43,7 +43,27 @@ class VehicleFragment : Fragment(R.layout.vehicle_fragment) {
         binding.rvVehicles.layoutManager = layoutManager
         adapter = VehicleAdapter(vehicles)
         binding.rvVehicles.adapter = adapter
+        binding.rvVehicles.addOnScrollListener(object: RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                onScroll(dy)
+            }
+        })
         getVehicles()
+    }
+
+    private fun onScroll(dy: Int) {
+        if(dy > 0) {
+            val visibleItemCount = layoutManager.childCount
+            val pastVisibleItem = layoutManager.findLastCompletelyVisibleItemPosition()
+            val total = adapter.itemCount
+            if(binding.progressBar.visibility == View.GONE && viewModel.getPage() < limit) {
+                if(visibleItemCount + pastVisibleItem >= total) {
+                    viewModel.increasePage()
+                    getVehicles()
+                }
+            }
+        }
     }
 
     private fun getVehicles() {
@@ -51,6 +71,7 @@ class VehicleFragment : Fragment(R.layout.vehicle_fragment) {
             when(it) {
                 is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                 is Resource.Success -> {
+                    limit = it.data.body.totalPages
                     binding.progressBar.visibility = View.GONE
                     vehicles.addAll(it.data.body.content)
                     adapter.notifyDataSetChanged()

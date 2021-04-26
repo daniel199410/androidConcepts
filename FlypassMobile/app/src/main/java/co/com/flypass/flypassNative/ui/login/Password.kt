@@ -29,26 +29,28 @@ class Password: Fragment(R.layout.password) {
         document = args.document
         binding = PasswordBinding.bind(view)
         binding.btnSeePassword.setOnClickListener { togglePasswordType() }
-        binding.btnLogin.setOnClickListener {
-            viewModel.getToken(document, binding.txtPassword.text.toString()).observe(viewLifecycleOwner, {
-                when(it) {
-                    is Resource.Loading -> binding.progessBar.visibility = View.VISIBLE
-                    is Resource.Success -> {
-                        binding.progessBar.visibility = View.GONE
-                        if(it.data.accessToken.isNotBlank()) {
-                            viewModel.saveSessionState(it.data, activity)
-                            val action = PasswordDirections.actionPasswordToMainNav()
-                            findNavController().navigate(action)
-                            requireActivity().finish()
-                        }
-                    }
-                    is Resource.Failure -> {
-                        snackBar.show()
-                        binding.progessBar.visibility = View.GONE
+        binding.btnLogin.setOnClickListener { onClickLoginButton() }
+    }
+
+    private fun onClickLoginButton() {
+        viewModel.getToken(document, binding.txtPassword.text.toString()).observe(viewLifecycleOwner, {
+            when(it) {
+                is Resource.Loading -> binding.progessBar.visibility = View.VISIBLE
+                is Resource.Success -> {
+                    binding.progessBar.visibility = View.GONE
+                    if(it.data.accessToken.isNotBlank()) {
+                        viewModel.saveSessionState(it.data, activity)
+                        val action = PasswordDirections.actionPasswordToMainNav()
+                        findNavController().navigate(action)
+                        requireActivity().finish()
                     }
                 }
-            })
-        }
+                is Resource.Failure -> {
+                    snackBar.show()
+                    binding.progessBar.visibility = View.GONE
+                }
+            }
+        })
     }
 
     private fun togglePasswordType() {

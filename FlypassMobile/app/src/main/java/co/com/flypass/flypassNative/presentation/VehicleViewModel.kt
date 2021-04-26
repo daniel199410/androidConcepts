@@ -8,6 +8,17 @@ import co.com.flypass.flypassNative.repository.VehicleRepository
 import kotlinx.coroutines.Dispatchers
 
 class VehicleViewModel(private val vehicleRepository: VehicleRepository) : ViewModel() {
+    private var page = 0
+    private val totalPages = 0
+
+    fun getPage(): Int {
+        return page
+    }
+
+    fun increasePage() {
+        page += 1
+    }
+
     fun getVehicles(licensePlate: String, page: Int) = liveData(Dispatchers.IO) {
         emit(Resource.Loading())
         try {
