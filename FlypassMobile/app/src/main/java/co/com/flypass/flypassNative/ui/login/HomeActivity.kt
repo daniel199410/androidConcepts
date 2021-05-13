@@ -21,7 +21,6 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         val host: NavHostFragment = supportFragmentManager
             .findFragmentById(R.id.container) as NavHostFragment? ?: return
-        // Set up Action Bar
         val navController = host.navController
         bottom_navigation.setupWithNavController(navController)
     }

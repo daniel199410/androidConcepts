@@ -49,6 +49,10 @@ class VehicleFragment : Fragment(R.layout.vehicle_fragment) {
                 onScroll(dy)
             }
         })
+        binding.floatingActionButton.setOnClickListener {
+            val action = VehicleFragmentDirections.actionMenuItemVehicleToAddVehicleStep1()
+            findNavController().navigate(action)
+        }
         getVehicles()
     }
 
