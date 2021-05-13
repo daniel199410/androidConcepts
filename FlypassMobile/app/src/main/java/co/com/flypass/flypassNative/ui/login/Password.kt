@@ -40,7 +40,7 @@ class Password: Fragment(R.layout.password) {
                     binding.progessBar.visibility = View.GONE
                     if(it.data.accessToken.isNotBlank()) {
                         viewModel.saveSessionState(it.data, activity)
-                        val action = PasswordDirections.actionPasswordToMainNav()
+                        val action = PasswordDirections.actionPasswordToHomeActivity()
                         findNavController().navigate(action)
                         requireActivity().finish()
                     }

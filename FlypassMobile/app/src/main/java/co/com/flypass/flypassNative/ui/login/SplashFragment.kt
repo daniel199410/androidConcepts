@@ -17,7 +17,7 @@ class SplashFragment : Fragment(R.layout.fragment_splah) {
         binding = FragmentSplahBinding.bind(view)
         val action: NavDirections
         if(loggedIn) {
-            action = SplashFragmentDirections.actionSplashFragmentToMainNav()
+            action = SplashFragmentDirections.actionSplashFragmentToHomeActivity()
             activity?.finish()
         } else {
             action = SplashFragmentDirections.actionSplashFragmentToDocument()

@@ -3,10 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/homeActivity">
-    <activity
-        android:id="@+id/homeActivity"
-        android:name="co.com.flypass.flypassNative.ui.login.HomeActivity"
-        android:label="activity_home"
-        tools:layout="@layout/activity_home" />
+    app:startDestination="@id/item_menu_account_status">
+    <fragment
+        android:id="@+id/item_menu_account_status"
+        android:name="co.com.flypass.flypassNative.ui.login.bottomNavigation.AccountStatusFragment"
+        android:label="account_status_fragment"
+        tools:layout="@layout/account_status_fragment" />
+    <fragment
+        android:id="@+id/menu_item_vehicle"
+        android:name="co.com.flypass.flypassNative.ui.login.bottomNavigation.VehicleFragment"
+        android:label="vehicle_fragment"
+        tools:layout="@layout/vehicle_fragment" >
+        <action
+            android:id="@+id/action_menu_item_vehicle_to_addVehicleStep1"
+            app:destination="@id/addVehicleStep1" />
+    </fragment>
+    <fragment
+        android:id="@+id/addVehicleStep1"
+        android:name="co.com.flypass.flypassNative.ui.login.vehicle.AddVehicleStep1"
+        android:label="fragment_add_vehicle_step1"
+        tools:layout="@layout/fragment_add_vehicle_step1" />
 </navigation>

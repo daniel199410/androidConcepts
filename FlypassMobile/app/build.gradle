@@ -41,6 +41,9 @@ android {
         cert {
             buildConfigField "String", 'BASE_URL', '"https://test.security.flypass.co/flypass/"'
             signingConfig signingConfigs.signing
+            debuggable true
+            jniDebuggable true
+            renderscriptDebuggable true
         }
     }
     compileOptions {
