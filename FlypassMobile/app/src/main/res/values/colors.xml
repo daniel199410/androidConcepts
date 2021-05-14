@@ -11,4 +11,5 @@
     <color name="primary_variant_light">#2C7F4E</color>
     <color name="secondary_light">#092626</color>
     <color name="card_background_color_light">#f4f5eb</color>
+    <color name="background">#DDDDDD</color>
 </resources>

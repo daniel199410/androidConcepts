@@ -1,5 +1,6 @@
 package co.com.flypass.flypassNative.ui.login.vehicle
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
@@ -36,12 +37,15 @@ class AddVehicleStep1 : Fragment(R.layout.fragment_add_vehicle_step1) {
     private fun getVehicleMessages() {
         viewModel.getVehicleMessages().observe(viewLifecycleOwner, {
             when(it) {
-                is Resource.Loading -> {}
+                is Resource.Loading -> binding.shimmerLayout.visibility = View.VISIBLE
                 is Resource.Success -> {
                     binding.htmlText.text = Html.fromHtml(it.data.body, Html.FROM_HTML_MODE_LEGACY)
+                    binding.shimmerLayout.visibility = View.GONE
+                    binding.htmlText.visibility = View.VISIBLE
                 }
                 is Resource.Failure -> {
                     Log.e("Error", it.toString())
+                    binding.shimmerLayout.visibility = View.GONE
                 }
             }
         })
