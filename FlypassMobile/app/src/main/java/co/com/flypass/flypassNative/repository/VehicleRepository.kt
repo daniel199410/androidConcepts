@@ -12,4 +12,8 @@ class VehicleRepository(context: Context) {
     suspend fun getVehicles(licensePlate: String, page: Int): Model<PageableResponse<Vehicle>> {
         return vehicleWebService.getVehicles(licensePlate, page)
     }
+
+    suspend fun getVehicleMessages(): Model<String> {
+        return vehicleWebService.getVehicleMessages()
+    }
 }

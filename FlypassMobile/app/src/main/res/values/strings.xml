@@ -23,4 +23,7 @@
     <string name="dynamic_text" translatable="false">%s</string>
     <string name="license_plate">License plate *</string>
     <string name="confirm_license_plate">Confirm license plate *</string>
+    <string name="required_field">This field is required.</string>
+    <string name="invalid_license_plate" >Invalid license plate e.g., ABC123, A1234, AB123, AB1234</string>
+    <string name="license_plate_match_error">License plates do not match.</string>
 </resources>

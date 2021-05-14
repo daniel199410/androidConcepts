@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.login.vehicle.AddVehicleStep1"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
@@ -19,26 +20,42 @@
             tools:text="User information text."
             android:padding="16dp" />
     </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txt_licensePlate"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_layout_licensePlate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/license_plate"
-        android:inputType="text"
-        android:layout_marginTop="16dp"/>
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txt_confirmLicensePlate"
+        app:errorEnabled="true"
+        android:layout_marginTop="16dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_licensePlate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="6"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_layout_confirm_licensePlate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/confirm_license_plate"
-        android:inputType="text"
-        android:layout_marginTop="16dp"/>
+        app:errorEnabled="true"
+        android:layout_marginTop="16dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_confirm_licensePlate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="6"/>
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next"
         android:layout_marginTop="16dp"
-        android:layout_gravity="center"
-        android:clickable="false"/>
+        android:layout_gravity="center"/>
 </LinearLayout>

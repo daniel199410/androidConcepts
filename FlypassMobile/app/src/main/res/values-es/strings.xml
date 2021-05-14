@@ -20,4 +20,7 @@
     <string name="vehicle_icon">ícono del vehículo</string>
     <string name="license_plate">Placa *</string>
     <string name="confirm_license_plate">Confirmar placa *</string>
+    <string name="required_field">Este campo es necesario.</string>
+    <string name="invalid_license_plate">No es una placa valida. ej: ABC123, A1234, AB123, AB1234</string>
+    <string name="license_plate_match_error">Las placas no coinciden.</string>
 </resources>

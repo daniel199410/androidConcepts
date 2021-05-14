@@ -27,6 +27,15 @@ class VehicleViewModel(private val vehicleRepository: VehicleRepository) : ViewM
             emit(Resource.Failure(e))
         }
     }
+
+    fun getVehicleMessages() = liveData(Dispatchers.IO) {
+        emit(Resource.Loading())
+        try {
+            emit(Resource.Success(vehicleRepository.getVehicleMessages()))
+        } catch (e: java.lang.Exception) {
+            emit(Resource.Failure(e))
+        }
+    }
 }
 
 class VehicleModelFactory(private val repo: VehicleRepository): ViewModelProvider.Factory {

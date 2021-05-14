@@ -20,6 +20,9 @@ interface VehicleWebService {
             @Query("page") page: Int = 1,
             @Query("vehicleType") vehicleType: Int? = null
     ): Model<PageableResponse<Vehicle>>
+
+    @GET("getVehicleStepOneMessage")
+    suspend fun getVehicleMessages(): Model<String>
 }
 
 class ApiClient {
