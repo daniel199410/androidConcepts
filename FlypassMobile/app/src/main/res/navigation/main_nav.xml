@@ -22,5 +22,14 @@
         android:id="@+id/addVehicleStep1"
         android:name="co.com.flypass.flypassNative.ui.login.vehicle.AddVehicleStep1"
         android:label="fragment_add_vehicle_step1"
-        tools:layout="@layout/fragment_add_vehicle_step1" />
+        tools:layout="@layout/fragment_add_vehicle_step1" >
+        <action
+            android:id="@+id/action_addVehicleStep1_to_addVehicleStep2Fragment"
+            app:destination="@id/addVehicleStep2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addVehicleStep2Fragment"
+        android:name="co.com.flypass.flypassNative.ui.login.vehicle.AddVehicleStep2Fragment"
+        android:label="fragment_add_vehicle_step2"
+        tools:layout="@layout/fragment_add_vehicle_step2" />
 </navigation>
