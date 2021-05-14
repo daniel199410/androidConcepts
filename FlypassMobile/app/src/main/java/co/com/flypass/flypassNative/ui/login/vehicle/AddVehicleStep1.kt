@@ -1,60 +1,22 @@
 package co.com.flypass.flypassNative.ui.login.vehicle
 
 import android.os.Bundle
+import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import co.com.flypass.flypassNative.R
+import co.com.flypass.flypassNative.databinding.FragmentAddVehicleStep1Binding
+import co.com.flypass.flypassNative.databinding.VehicleFragmentBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class AddVehicleStep1 : Fragment(R.layout.fragment_add_vehicle_step1) {
+    private lateinit var binding: FragmentAddVehicleStep1Binding
+    private var message: String = "¡Ojo! antes de continuar…\n<br/>\nSi tu carro tiene activo otro servicio de pago electrónico de peajes, deberás desvincularlo eliminando tu vehículo de su plataforma,\nsolo así podrás ser Flypass y comenzar a viajar cómodo y feliz.\n<br/>\n<br/>\nConoce cómo desvincularte de:\n<br/>\n<a href=\"http://gopass.com.co/desvincular.php\" target=\"_blank\">Gopass</a><br/>\n<a href=\"http://www.copilotocolombia.com/contactanos\" target=\"_blank\">Copiloto</a>"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AddVehicleStep1.newInstance] factory method to
- * create an instance of this fragment.
- */
-class AddVehicleStep1 : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_vehicle_step1, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AddVehicleStep1.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AddVehicleStep1().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentAddVehicleStep1Binding.bind(view)
+        binding.htmlText.text = Html.fromHtml(message, Html.FROM_HTML_MODE_LEGACY)
     }
 }

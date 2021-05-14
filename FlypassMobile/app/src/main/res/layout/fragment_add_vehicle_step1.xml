@@ -1,8 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.vehicle.AddVehicleStep1">
-
-</FrameLayout>
+    tools:context=".ui.login.vehicle.AddVehicleStep1"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="16dp"
+    android:orientation="vertical">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.App.CardView">
+        <TextView
+            android:id="@+id/html_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="User information text."
+            android:padding="16dp" />
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txt_licensePlate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/license_plate"
+        android:inputType="text"
+        android:layout_marginTop="16dp"/>
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txt_confirmLicensePlate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/confirm_license_plate"
+        android:inputType="text"
+        android:layout_marginTop="16dp"/>
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:clickable="false"/>
+</LinearLayout>

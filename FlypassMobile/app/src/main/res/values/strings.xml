@@ -21,4 +21,6 @@
     <string name="vehicle_icon">Vehicle icon</string>
     <string name="titular" translatable="false">Titular</string>
     <string name="dynamic_text" translatable="false">%s</string>
+    <string name="license_plate">License plate *</string>
+    <string name="confirm_license_plate">Confirm license plate *</string>
 </resources>

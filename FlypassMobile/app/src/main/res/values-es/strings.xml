@@ -18,4 +18,6 @@
     <string name="account_status">Estado cuenta</string>
     <string name="status">Estado</string>
     <string name="vehicle_icon">ícono del vehículo</string>
+    <string name="license_plate">Placa *</string>
+    <string name="confirm_license_plate">Confirmar placa *</string>
 </resources>
